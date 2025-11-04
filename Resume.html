@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+     * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at center, #020202, #040d0f, #001a1d);
+  color: #baf8d3;
+  padding-top: 80px;
+  overflow-x: hidden;
+}
+.resume-container {
+  max-width: 950px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 30px rgba(124, 240, 52, 0.1);
+  padding: 40px 60px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1.2s ease-in-out;
+}
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #7cf034;
+  text-shadow: 0 0 20px rgba(124, 240, 52, 0.6);
+  letter-spacing: 1px;
+}
+
+header h2 {
+  color: aqua;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+header p {
+  color: #baf8d3;
+}
+
+header a {
+  color: #7cf034;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: aqua;
+  text-shadow: 0 0 8px aqua;
+}
+section h3 {
+  color: #7cf034;
+  font-size: 1.6em;
+  margin-bottom: 12px;
+  text-shadow: 0 0 8px rgba(124, 240, 52, 0.6);
+  position: relative;
+  display: inline-block;
+}
+
+section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #7cf034, aqua);
+  border-radius: 2px;
+}
+section {
+  margin-bottom: 40px;
+}
+
+section p, section li {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin: 8px 0;
+  padding-left: 18px;
+  position: relative;
+}
+
+#point::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: aqua;
+  text-shadow: 0 0 6px aqua;
+}
+.edu-item h4 {
+  color: aqua;
+  margin-bottom: 5px;
+}
+.declaration p {
+  font-style: italic;
+  font-size: 1rem;
+  color: #baf8d3;
+  border-left: 3px solid #7cf034;
+  padding-left: 15px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(124, 240, 52, 0.1);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .resume-container {
+    padding: 25px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  section h3 {
+    font-size: 1.4em;
+  }
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MyPortfolio</a>
+      <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link " href="About.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="Project.html">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="bars-animation">
+        <div class="bar"></div>
+        
+    </div>
+    <div class="resume-container">
+    <header>
+      <h1>GANESH K</h1>
+      <h2>Java Full Stack Developer | Microbiology Graduate</h2>
+      <p>
+        📧 <a href="mailto:kganesh2032001@gmail.com">kganesh2032001@gmail.com</a> |
+        📞 +91 98945 24569 | 📍 Thanjavur, India
+      </p>
+    </header>
+
+    <section id="summary" class="summary">
+      <h3>Professional Summary</h3>
+      <p>
+        Motivated and detail-oriented Java Full Stack Developer with a strong academic foundation in Microbiology
+        and certified training in Full Stack Development. Proficient in designing, developing, and deploying
+        web applications using Java technologies. Skilled in teamwork, problem-solving, and adaptability gained
+        through internships and research projects. Eager to contribute to a dynamic development team and grow in
+        the software industry.
+      </p>
+    </section>
+
+    <section id="skills" class="skills">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li id="point"><strong>Languages & Frameworks:</strong> Java, HTML, CSS, JavaScript</li>
+        <li id="point"><strong>Databases:</strong> MySQL</li>
+        <li id="point"><strong>Tools:</strong> Visual Studio Code, Eclipse, GitHub</li>
+        <li id="point"><strong>Office Tools:</strong> MS Office, Google Sheets, Canva</li>
+        <li id="point"><strong>Soft Skills:</strong> Problem Solving, Team Collaboration, Adaptability</li>
+      </ul>
+    </section>
+
+    <section id="education" class="education">
+      <h3>Academics</h3>
+      <div class="edu-item">
+        <h4>M.Sc. Microbiology</h4>
+        <p>Bharath Institute of Higher Education and Research, Chennai (2022–2024) — <strong>85%</strong></p>
+      </div>
+      <div class="edu-item">
+        <h4>B.Sc. Microbiology</h4>
+        <p>SASTRA Deemed To Be University, Kumbakonam (2019–2022) — <strong>71%</strong></p>
+      </div>
+    </section>
+
+    <section class="certifications">
+      <h3>Certifications</h3>
+      <ul>
+        <li id="point">Java Full Stack Developer</li>
+      </ul>
+    </section>
+
+    <section id="project" class="project">
+      <h3>Project</h3>
+      <p>
+        Developed a comprehensive healthcare web application supporting appointment booking, online consultation,
+        and medical e-commerce, utilizing Java, HTML, CSS, MySQL, and Spring Boot.
+      </p>
+    </section>
+
+    <section class="extra">
+      <h3>Additional Information</h3>
+      <ul>
+        <li id="point"><strong>Languages:</strong> English, Tamil</li>
+        <li id="point"><strong>Hobbies:</strong> Learning new technologies, Painting</li>
+      </ul>
+    </section>
+
+    <section id="declaration" class="declaration">
+      <h3>Declaration</h3>
+      <p>
+        I hereby declare that the information provided above is true and correct to the best of my knowledge.
+      </p>
+    </section>
+
+    
+  </div>
+    
+</body>
+</html>
