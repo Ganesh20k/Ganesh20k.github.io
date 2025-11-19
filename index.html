@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * { 
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      color: aquamarine;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 255, 128, 0.15);
+      animation: show-content 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #7cf034 !important;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .navbar-brand:hover {
+      color: aqua !important;
+      text-shadow: 0 0 10px aqua;
+    }
+
+    .navbar-nav .nav-link {
+      color: #baf8d3 !important;
+      font-weight: 500;
+      transition: 0.3s;
+      margin-right: 15px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #7cf034 !important;
+      text-shadow: 0 0 10px #7cf034;
+    }
+
+    @keyframes show-content {
+      100% {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .sec {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      color: aquamarine;
+      padding: 0 10%;
+      visibility: hidden;
+      opacity: 0;
+      animation: show-content 1.5s linear forwards;
+      animation-delay: 1.5s;
+      flex-wrap: wrap;
+    }
+
+    .sec-in h1 {
+      font-size: 50px;
+    }
+
+    .sec-in h2 {
+      display: inline-block;
+      font-size: 35px;
+      margin-top: -10px;
+    }
+
+    .sec-in p {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    .sec-in h2 span {
+      position: relative;
+      display: inline-block;
+      color: transparent;
+      -webkit-text-stroke: 0.7px #7cf034;
+      animation: display-text 8s linear infinite;
+      animation-delay: calc(-4s * var(--i));
+    }
+
+    @keyframes display-text {
+      25%, 100% {
+        display: none;
+      }
+    }
+
+    .sec-in h2 span::before {
+      content: attr(data-text);
+      position: absolute;
+      width: 0;
+      border-right: 2px solid #7cf034;
+      color: #7cf034;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: fill-text 2s linear infinite;
+    }
+
+    @keyframes fill-text {
+      10%, 100% {
+        width: 0;
+      }
+      70%, 90% {
+        width: 100%;
+      }
+    }
+
+    .home-img .img-box {
+      position: relative;
+      width: 30vw;
+      height: 30vw;
+      border-radius: 50%;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .home-img .img-box::before,
+    .home-img .img-box::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: conic-gradient(transparent, transparent, transparent, #7cf034);
+      transform: rotate(0deg);
+      animation: rotate 10s linear infinite;
+    }
+
+    .home-img .img-box::after {
+      animation-delay: -5s;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .home-img .img-box .img-item {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      border-radius: 50%;
+      border: 0.1px solid black;
+      display: flex;
+      z-index: 1;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .home-img .img-box .img-item img {
+      position: absolute;
+      top: 60px;
+      display: block;
+      width: 85%;
+      object-fit: cover;
+      mix-blend-mode: lighten;
+    }
+
+    .bars-animation {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      z-index: -1;
+    }
+
+    .bars-animation .bar {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #020202, #040d0f, #001a1d);
+      transform: translateY(-100%);
+      animation: back 0.5s ease-in-out forwards;
+    }
+
+    @keyframes back {
+      100% {
+        transform: translateY(0%);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .navbar-nav {
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .navbar-nav .nav-link {
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sec {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+      }
+
+      .sec-in h1 {
+        font-size: 35px;
+        margin-top: 25%;
+      }
+
+      .sec-in h2 {
+        font-size: 24px;
+      }
+
+      .sec-in p {
+        font-size: 18px;
+      }
+
+      .home-img .img-box {
+        width: 60vw;
+        height: 60vw;
+        margin-top: 30px;
+      }
+
+      .home-img .img-box::before,
+      .home-img .img-box::after {
+        width: 300px;
+        height: 300px;
+      }
+
+      .home-img .img-box .img-item img {
+        top: 40px;
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar-brand {
+        font-size: 1.5rem;
+      }
+
+      .sec-in h1 {
+        font-size: 30px;
+      }
+
+      .sec-in h2 {
+        font-size: 20px;
+      }
+
+      .sec-in p {
+        font-size: 16px;
+      }
+
+      .home-img .img-box {
+        width: 70vw;
+        height: 70vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MyPortfolio</a>
+      <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="Resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="Project.html">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bars-animation">
+    <div class="bar"></div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-in">
+      <h1>Ganesh.K</h1>
+      <h2>I'm a 
+        <span style="--i:2;" data-text="Microbiologist">Microbiologist</span>
+        <span style="--i:1;" data-text="JAVA Full Stack Developer">JAVA Full Stack Developer</span>
+      </h2>
+      <p>Ready to turn challenges into opportunities and ideas into impact</p>
+    </div>
+
+    <div class="home-img">
+      <div class="img-box">
+        <div class="img-item">
+          <img src="images/img 3.png" alt="Profile Picture">
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
